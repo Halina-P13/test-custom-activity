@@ -1,0 +1,77 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+       "icon": "images/sms.png",
+       "iconSmall": "images/smsSmall.png"
+    },
+    "type": "REST",
+    "lang": {
+       "en-US": {
+           "name": "Zed Custom Activity",
+           "description": "Working through custom activity creation"
+       }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [],
+            "outArguments": [],
+            "url": "https://posttestserver.com/post.php?dir=zed_customActivity_aug16_execute"
+        }
+    },
+    "configurationArguments": {
+       "applicationExtensionKey": "bb86d686-3ac4-48b4-86e6-6daa4e4758ce",
+       "save": {
+           "url": "https://posttestserver.com/post.php?dir=zed_customActivity_aug16_save"
+       },
+       "publish": {
+           "url": "https://posttestserver.com/post.php?dir=zed_customActivity_aug16_publish"
+       },
+       "validate": {
+           "url": "https://posttestserver.com/post.php?dir=zed_customActivity_aug16_validate"
+       }
+    },
+    "wizardSteps": [
+       { "label": "Step 1", "key": "step1" },
+       { "label": "Step 2", "key": "step2" },
+       { "label": "Step 3", "key": "step3" },
+       { "label": "Step 4", "key": "step4", "active": false }
+    ],
+    "userInterfaces": {
+       "configModal": {
+           "height": 200,
+           "width": 300,
+           "fullscreen": true
+       }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "phoneNumber": {
+                            "dataType": "Phone",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    },
+                    {
+                        "emailAddress": {
+                            "dataType": "Email",
+                            "isNullable": false,
+                            "direction": "in"
+                        }
+                    }
+                ],
+                "outArguments": [
+                    {
+                        "foundSignupDate": {
+                            "dataType": "Date",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
